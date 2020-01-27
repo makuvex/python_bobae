@@ -23,3 +23,6 @@ git remote add origin https://github.com/makuvex/python_bobae.git
 
 push
 git push origin master
+
+깃(git) pull 명령 후 non-fast-forward 문제 해결방법
+- git pull origin master --allow-unrelated-histories
