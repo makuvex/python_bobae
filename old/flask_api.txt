@@ -1,0 +1,20 @@
+python3
+pip3
+PyCharm Editor
+Insomnia
+MySQL 설치
+MySQL WorkBench
+
+pip3 install flask-restful
+
+REST API를 사용할 때는 cURL 옵션 중 몇 가지를 꼭 알아두는 것이 좋다.
+
+-i: 응답 헤더 출력 (옵션 없으면 응답 본문만 출력함)
+-v: 중간 처리 과정, 오류 메시지, 요청 메시지와 응답 메시지를 헤더와 본문을 포함해 전체 출력
+-X: 요청 메소드를 지정 (옵션 없으면 기본값은 GET)
+-H: 요청 헤더를 지정
+-d: 요청 본문을 지정 (옵션 없으면 요청 본문 없음)
+    
+#https://open.neis.go.kr/hub/schoolInfo?Type=json&pIndex=1&pSize=100&SCHUL_NM=신중    
+#curl -X GET --data-urlencode "Type=json&pIndex=1&pSize=2&SCHUL_NM=신중초등학교" https://open.neis.go.kr/hub/schoolInfo
+#curl -X PUT -H "Content-Type: application/json; charset=utf-8" -d '{"message":"hello"}' http://127.0.0.1:3000/api/chat

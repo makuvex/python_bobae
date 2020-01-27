@@ -1,0 +1,88 @@
+sudo service mysql start
+mysql -p
+
+참고
+https://www.everdevel.com/MySQL/creating-table/
+
+아래 에러 권한 문제
+mysql.connector.errors.ProgrammingError: 1044 (42000): Access denied for user 'makuvex7'@'localhost' to database 'test'
+- grant all privileges on *.* to 'makuvex7'@'localhost' with grant option;
+
+
+0. 암호 설정
+ALTER USER 'root'@'localhost' IDENTIFIED BY 'malice77';
+
+1. 버전 확인
+show variables like "%version%";
+
+2. db 생성 및 삭제
+create database bobae;
+drop database bobae;
+
+3. db 생성 확인
+show databases;
+
+4. 유저 생성
+CREATE USER 'makuvex7'@'localhost' IDENTIFIED BY 'malice77'
+
+5. 유저 확인
+SELECT User, Host, authentication_string FROM mysql.user;
+
+6. 유저에 db 권한 부여
+GRANT ALL PRIVILEGES ON bobae.* to makuvex7@localhost;
+
+7. 권한 갱신
+FLUSH PRIVILEGES;
+
+8. 외부 접속 허용
+CREATE USER 'root'@'192.168.0.10' IDENTIFIED BY 'ngle1234';
+GRANT ALL PRIVILEGES ON * . * TO 'root'@'192.168.0.10' WITH GRANT OPTION; 
+FLUSH PRIVILEGES;
+
+# 어디서든 접속 가능
+CREATE USER 'root'@'%' IDENTIFIED BY 'malice77';
+GRANT ALL PRIVILEGES ON * . * TO 'root'@'%' WITH GRANT OPTION; 
+FLUSH PRIVILEGES;
+
+9. 한글 꺠짐 방지
+ALTER DATABASE bobae CHARACTER SET utf8 COLLATE utf8_general_ci;
+ALTER TABLE bobae convert to charset utf8;
+
+10. db 선택
+use bobae
+
+11. 테이블 생성
+create table board_tb(
+    sno int not null,
+    name char(100),
+    regdate char(100),
+    primary key(sno)
+    );
+    
+12. 테이블 확인
+show tables;
+
+13. 컬럼 확인
+desc board_tb;
+
+14. 필드 추가
+alter table 테이블명 add 새로추가할필드명과 타입 after 필드이름;
+alter table girl add author varchar(255) after regdate;
+
+15. 필드 삭제
+alter table 테이블명 drop 삭제할 필드명; 
+alter table board_tb drop author; 
+
+16. 테이블 삭제
+drop table board_tb;
+
+17. 컬럼 이름 변경
+ALTER TABLE girl CHANGE name subject varchar(255);
+
+18. row 삭제
+delete from girl where sno=111
+
+19. 데이터 조회 정렬 내림차순
+select sno, subject,regdate from girl order by sno desc;
+
+UPDATE mysql.user SET authentication_string=PASSWORD('malice77') WHERE user='root';
