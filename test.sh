@@ -7,7 +7,6 @@ echo "$msg"
 if [ -z "$msg" ]; then
     echo "커밋 메시지를 작성해주세요."
 else
-    git add *
-    git commit -m $msg
-    git push origin master
+    echo "asdzzzz [${msg}]"
 fi
+
