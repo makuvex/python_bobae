@@ -6,6 +6,7 @@ MySQL 설치
 MySQL WorkBench
 
 pip3 install flask-restful
+pip3 install flask-mysql
 
 REST API를 사용할 때는 cURL 옵션 중 몇 가지를 꼭 알아두는 것이 좋다.
 
@@ -16,5 +17,6 @@ REST API를 사용할 때는 cURL 옵션 중 몇 가지를 꼭 알아두는 것�
 -d: 요청 본문을 지정 (옵션 없으면 요청 본문 없음)
     
 #https://open.neis.go.kr/hub/schoolInfo?Type=json&pIndex=1&pSize=100&SCHUL_NM=신중    
+#curl -X GET 127.0.0.1:5000/info
 #curl -X GET --data-urlencode "Type=json&pIndex=1&pSize=2&SCHUL_NM=신중초등학교" https://open.neis.go.kr/hub/schoolInfo
 #curl -X PUT -H "Content-Type: application/json; charset=utf-8" -d '{"message":"hello"}' http://127.0.0.1:3000/api/chat
