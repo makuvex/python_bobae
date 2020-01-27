@@ -16,7 +16,7 @@ def create_table(db_name, table_name):
 
     mycursor = mydb.cursor()
 
-    query = "CREATE TABLE " + table_name + " (sno int(11) PRIMARY KEY, name VARCHAR(255), link VARCHAR(255))"
+    query = "CREATE TABLE " + table_name + " (sno int(11) PRIMARY KEY, subject VARCHAR(255), author VARCHAR(255), link text, regdate VARCHAR(100), recomm VARCHAR(10), viewcount VARCHAR(10))"
     mycursor.execute(query)
     
     
