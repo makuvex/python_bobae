@@ -26,3 +26,7 @@ git push origin master
 
 깃(git) pull 명령 후 non-fast-forward 문제 해결방법
 - git pull origin master --allow-unrelated-histories
+
+인증정보 저장
+- git config --global credential.helper cache
+- git config --global credential.helper 'store --file ~/.my-credentials'
