@@ -20,3 +20,7 @@ python 2.7에서 python3으로 업데이트(https://www.whatwant.com/945)
 - update-alternatives --config python
 $ python --version
 - Python 3.7.5
+
+urlopen 응답 없을때
+from urllib import request
+urllib.request.urlopen( )
