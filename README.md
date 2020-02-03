@@ -24,3 +24,8 @@ $ python --version
 urlopen 응답 없을때
 from urllib import request
 urllib.request.urlopen( )
+
+//////
+
+docker attach 를 통해 기동중인 컨테이너의 TTY 접근했을 때 exit 를 하면 해당 컨테이너가 종료된다.
+컨테이너를 종료하지 않고 터미널만 나가고 싶으면(detach) ctrl+p 를 누른 후, ctrl+q 키를 누르면 detach 된다.
